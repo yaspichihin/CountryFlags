@@ -9,3 +9,9 @@ export function selectCountriesInfo(state) {
 export function selectAllCountries(state) {
   return state.countries.list;
 }
+
+export function selectVisibleCountries(state, { search = "" }) {
+  return state.countries.list.filter((country) =>
+    country.name.toLowerCase().includes(search.toLocaleLowerCase())
+  );
+}
