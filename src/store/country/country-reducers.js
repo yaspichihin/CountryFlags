@@ -3,12 +3,14 @@ import {
   SET_LOADING,
   SET_ERROR,
   CLEAR_COUNTRY,
+  SET_NEIGHBORS,
 } from "./country-consts";
 
 const initialState = {
   country: null,
   status: "idle",
   error: null,
+  neighbors: [],
 };
 
 export function countryReducer(state = initialState, { type, payload }) {
@@ -38,6 +40,11 @@ export function countryReducer(state = initialState, { type, payload }) {
         country: null,
         status: "idle",
         error: null,
+      };
+    case SET_NEIGHBORS:
+      return {
+        ...state,
+        neighbors: payload,
       };
     default:
       return state;

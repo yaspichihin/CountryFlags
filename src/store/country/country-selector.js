@@ -5,3 +5,7 @@ export function selectCountry(state) {
 export function selectCountryInfo(state) {
   return state.country;
 }
+
+export function selectNeighbors(state) {
+  return state.country.neighbors;
+}
